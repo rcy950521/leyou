@@ -1,0 +1,25 @@
+server:
+  port: 8082
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+    registry-fetch-interval-seconds: 5
+    instance:
+      ip-address: 127.0.0.1
+      prefer-ip-address: true
+spring:
+  application:
+    name: upload-service
+  servlet:
+    multipart:
+      max-file-size: 5MB #修改springboot下springmvc上传文件大小限制
+ly:
+  oss:
+    accessKeyId: LTAI4Ff147o9kZqBinnvVzRT
+    accessKeySecret: g2uAi1mfw9EvozsorPQsWJUd3XIrmM
+    host: http://image.leyou.com # 访问oss的域名，很重要bucket + endpoint
+    endpoint: oss-cn-beijing.aliyuncs.com # 你的服务的端点，不一定跟我一样
+    dir: "" # 保存到bucket的某个子目录
+    expireTime: 20 # 过期时间，单位是S
+    maxFileSize: 5242880 #文件大小限制，这里是5M
